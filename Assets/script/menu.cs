@@ -1,18 +1,17 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;  // Necessário para usar o SceneManager
+using UnityEngine.SceneManagement;  // Necessário para gerenciar cenas
 
 public class SceneChanger : MonoBehaviour
 {
-    // Nome da cena de destino (modifique conforme necessário)
+    // Nome da cena para a qual o jogador será transferido
     public string sceneToLoad = "game";  // Substitua com o nome da sua cena
 
-    // Update é chamado uma vez por frame
     void Update()
     {
-        // Verifica se a tecla "Space" foi pressionada
+        // Detecta se a tecla "Space" foi pressionada
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // Carrega a cena
+            // Muda para a cena
             SceneManager.LoadScene(sceneToLoad);
         }
     }
