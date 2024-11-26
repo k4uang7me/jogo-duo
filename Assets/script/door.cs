@@ -1,16 +1,15 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class door : MonoBehaviour
+public class Door : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public string sceneToLoad; // Nome da cena para carregar quando o jogador entra na porta
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player")) // Verifica se o objeto que colidiu é o jogador
+        {
+            SceneManager.LoadScene(sceneToLoad); // Carrega a cena especificada
+        }
     }
 }
